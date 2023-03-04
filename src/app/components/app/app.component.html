@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  Card view demo
+</mat-toolbar>
+<div class="content" style="height:1000px;">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid" >
+    <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%"
+         infinite-scroll
+         [infiniteScrollDistance]="2"
+         [infiniteScrollThrottle]="1000"
+         (scrolled)="onScroll()"
+         *ngFor="let dog of dogs">
+      <app-dog-fency-card></app-dog-fency-card>
+    </div>
+  </div>
+</div>
